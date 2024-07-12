@@ -1,3 +1,21 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Read posts from file
+const readPosts = () => {
+  const data = fs.readFileSync(
+    path.join(__dirname, '..', 'data', 'posts.json')
+  );
+  return JSON.parse(data);
+};
+
+let posts = readPosts();
+
 // @desc  Get all posts
 // @route  GET /api/posts
 export const getPosts = (req, res, next) => {

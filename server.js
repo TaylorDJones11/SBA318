@@ -1,28 +1,22 @@
 import express from 'express';
 import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// import posts from './routes/posts.js';
+import posts from './routes/posts.js';
 // import logger from './middleware/logger.js';
 // import errorHandler from './middleware/error.js';
 // import notFound from './middleware/notFound.js';
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use(express.json());
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-// Read posts from file
-const readPostsFromFile = () => {
-  const data = fs.readFileSync(path.join(__dirname, 'data', 'posts.json'));
-  return JSON.parse(data);
-};
+// Middleware to serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
 
-let posts = readPostsFromFile();
+// Routes
+app.use('/api/posts', posts);
 
 // TEMPLATE ENGINE
 
