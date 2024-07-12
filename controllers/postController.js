@@ -6,12 +6,17 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const postsFilePath = path.join(__dirname, '..', 'data', 'posts.json');
+
 // Read posts from file
-const readPosts = () => {
-  const data = fs.readFileSync(
-    path.join(__dirname, '..', 'data', 'posts.json')
-  );
+export const readPosts = () => {
+  const data = fs.readFileSync(postsFilePath);
   return JSON.parse(data);
+};
+
+// Write posts to file
+export const writePosts = (posts) => {
+  fs.writeFileSync(postsFilePath, JSON.stringify(posts, null, 2));
 };
 
 let posts = readPosts();
@@ -45,7 +50,7 @@ export const getPost = (req, res, next) => {
 // @route  POST /api/posts
 export const createPost = (req, res, next) => {
   const newPost = {
-    id: posts.length + 1,
+    id: posts.length ? posts[posts.length - 1].id + 1 : 1,
     title: req.body.title,
   };
 
@@ -56,6 +61,7 @@ export const createPost = (req, res, next) => {
   }
 
   posts.push(newPost);
+  writePosts(posts);
   res.status(201).json(posts);
 };
 
@@ -73,6 +79,7 @@ export const updatePost = (req, res, next) => {
   }
 
   post.title = req.body.title;
+  writePosts(posts);
   res.status(200).json(posts);
 };
 
@@ -90,5 +97,6 @@ export const deletePost = (req, res, next) => {
   }
 
   posts = posts.filter((post) => post.id !== id);
+  writePosts(posts);
   res.status(200).json(posts);
 };

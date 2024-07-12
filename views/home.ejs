@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Blog Platform</title>
     <link rel="stylesheet" href="/public/styles.css" />
   </head>
   <body>
@@ -11,6 +11,19 @@
 
     <main>
       <h2>Recent Posts</h2>
+      <ul>
+        <% posts.forEach(post => { %>
+        <li>
+          <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+          <p><%= post.excerpt %></p>
+          <small
+            >By <%= post.author %> on <%= new
+            Date(post.createdAt).toLocaleDateString() %></small
+          >
+        </li>
+        <% }) %>
+      </ul>
+      <a href="/new-post">Create a New Post</a>
     </main>
   </body>
 </html>
