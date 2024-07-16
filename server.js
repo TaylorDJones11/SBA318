@@ -17,7 +17,7 @@ const app = express();
 
 // Configure ejs
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', 'views');
 
 // Body parser middleware
 app.use(express.json());
