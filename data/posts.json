@@ -50,5 +50,12 @@
     "content": "Where's my content",
     "author": "Me",
     "createdAt": "2024-07-16T19:40:21.574Z"
+  },
+  {
+    "id": 8,
+    "title": "SBA 318",
+    "content": "I'm really tired but gotta get this finished",
+    "author": "A sleep software engineer student",
+    "createdAt": "2024-07-17T02:31:50.498Z"
   }
 ]

@@ -18,14 +18,14 @@
           <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
           <p><%= post.excerpt %></p>
           <p><%= post.content %></p>
-          <small
-            >By <%= post.author %> on <%= new
-            Date(post.createdAt).toLocaleDateString() %></small
-          >
+          <small>
+            By <%= post.author %> on <%= new
+            Date(post.createdAt).toLocaleDateString() %>
+          </small>
         </li>
         <% }) %>
       </ul>
-      <a href="new-post">Create a New Post</a>
+      <a id="new-post" href="new-post">Create a New Post</a>
     </main>
   </body>
 </html>
