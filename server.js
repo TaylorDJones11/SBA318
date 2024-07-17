@@ -50,6 +50,7 @@ app.get('/post/:id', (req, res) => {
     const posts = readPosts();
     const post = posts.find((p) => p.id === parseInt(req.params.id));
     if (post) {
+      console.log('Found post', post);
       res.render('post', { post });
     } else {
       res.status(404).send('Post not found');
@@ -72,10 +73,12 @@ app.post('/new-post', (req, res) => {
     const newPost = {
       id: posts.length ? posts[posts.length - 1].id + 1 : 1,
       title: req.body.title,
+      excerpt: req.body.excerpt,
       content: req.body.content,
       author: req.body.author,
       createdAt: new Date(),
     };
+    console.log('New Post Data:', newPost);
     posts.push(newPost);
     writePosts(posts);
     res.redirect('/');

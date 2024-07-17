@@ -3,27 +3,52 @@
     "id": 1,
     "title": "How to Learn JavaScript in 2024",
     "author": "Jane Doe",
-    "date": "2024-07-09",
-    "tags": ["JavaScript", "Programming", "Web Development"],
+    "createdAt": "2024-07-09",
     "excerpt": "Learn the best strategies and resources for mastering JavaScript in 2024.",
-    "content": "<p>JavaScript is an essential language for web development...</p>"
+    "content": "JavaScript is an essential language for web development..."
   },
   {
     "id": 2,
     "title": "How to Learn JavaScript in 2024",
     "author": "Jane Doe",
-    "date": "2024-07-09",
-    "tags": ["JavaScript", "Programming", "Web Development"],
+    "createdAt": "2024-07-09",
     "excerpt": "Learn the best strategies and resources for mastering JavaScript in 2024.",
-    "content": "<p>JavaScript is an essential language for web development...</p>"
+    "content": "JavaScript is an essential language for web development..."
   },
   {
     "id": 3,
     "title": "How to Learn Java in 2024",
     "author": "Jane Doe",
-    "date": "",
-    "tags": ["JavaScript", "Programming", "Web Development"],
+    "createdAt": "2024-07-09",
     "excerpt": "Learn the best strategies and resources for mastering JavaScript in 2024.",
-    "content": "<p>JavaScript is an essential language for web development...</p>"
+    "content": "JavaScript is an essential language for web development..."
+  },
+  {
+    "id": 4,
+    "title": "Hi ",
+    "excerpt": "It's me",
+    "author": "Taylor",
+    "createdAt": "2024-07-16T19:20:18.994Z"
+  },
+  {
+    "id": 5,
+    "title": "This is my title",
+    "content": "This is my content",
+    "author": "Taylor",
+    "createdAt": "2024-07-16T19:33:03.314Z"
+  },
+  {
+    "id": 6,
+    "title": "This is a title 2",
+    "content": "Where is my content",
+    "author": "Tay Jay",
+    "createdAt": "2024-07-16T19:38:57.342Z"
+  },
+  {
+    "id": 7,
+    "title": "Hey Title",
+    "content": "Where's my content",
+    "author": "Me",
+    "createdAt": "2024-07-16T19:40:21.574Z"
   }
 ]
